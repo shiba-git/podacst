@@ -1,0 +1,99 @@
+	<div id="podcast_show">
+		<div id="show_banner">
+			<div class="wrapper_skinny">
+				<h1><%= @user.title %></h1>
+				<p class="description"><%= @user.description %></p>
+				<% unless @user.itunes.blank? %>
+				<a href="<%= @user.itunes %>" class="subscribe_link">iTunes</a>
+				<% end %>
+
+				<% unless @user.stitcher.blank? %>
+				<a href="<%= @user.stitcher %>" class="subscribe_link">Stitcher</a>
+				<% end %>
+
+				<% unless @user.podbay.blank? %>
+				<a href="<%= @user.podbay %>" class="subscribe_link">PodBay</a>
+				<%end %>
+			</div>
+		</div>
+
+		<div id="breadcrumb">
+			<%= link_to users_path do %>
+				All Podcasts 
+				<span>/</span>
+				TheRochetship Podcast
+			<% end %>
+		</div>
+
+		<div id="episodes">
+			<div class="wrapper_skinny">
+				<ul class="cf">
+					<li class="cf">
+						<div class="episode_thumbnail">
+							<a href="episode.html">
+								<img src="images/pieter_levels.png" alt="Pieter Levels">
+							</a>
+						</div>
+						<div class="episode_overview">
+							<h2><a href="episode.html">How to Pull of 12 (Well Executed) Startups in 12 Months</a></h2>
+							<p class="description">
+								Pieter Levels, Founder of Levels.io, talks about how he's buliding 12 startups in 12months. Not only do we cover how he's able to pull that off(and dto wi..)
+							</p>
+						</div>
+					</li>
+
+
+					<li class="cf">
+						<div class="episode_thumbnail">
+							<a href="episode.html">
+								<img src="images/pieter_levels.png" alt="Pieter Levels">
+							</a>
+						</div>
+						<div class="episode_overview">
+							<h2><a href="episode.html">How to Pull of 12 (Well Executed) Startups in 12 Months</a></h2>
+							<p class="description">
+								Pieter Levels, Founder of Levels.io, talks about how he's buliding 12 startups in 12months. Not only do we cover how he's able to pull that off(and dto wi..)
+							</p>
+						</div>
+					</li>
+
+
+					<li class="cf">
+						<div class="episode_thumbnail">
+							<a href="episode.html">
+								<img src="images/pieter_levels.png" alt="Pieter Levels">
+							</a>
+						</div>
+						<div class="episode_overview">
+							<h2><a href="episode.html">How to Pull of 12 (Well Executed) Startups in 12 Months</a></h2>
+							<p class="description">
+								Pieter Levels, Founder of Levels.io, talks about how he's buliding 12 startups in 12months. Not only do we cover how he's able to pull that off(and dto wi..)
+							</p>
+						</div>
+					</li>
+
+
+					<li class="cf">
+						<div class="episode_thumbnail">
+							<a href="episode.html">
+								<img src="images/pieter_levels.png" alt="Pieter Levels">
+							</a>
+						</div>
+						<div class="episode_overview">
+							<h2><a href="episode.html">How to Pull of 12 (Well Executed) Startups in 12 Months</a></h2>
+							<p class="description">
+								Pieter Levels, Founder of Levels.io, talks about how he's buliding 12 startups in 12months. Not only do we cover how he's able to pull that off(and dto wi..)
+							</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="pagination">
+			<span class="previous_page disabled">Previous</span>
+			<em class="current">1</em>
+			<a href="#">2</a>
+			<a href="#" class="next_page">Next</a>
+		</div>
+	</div>
