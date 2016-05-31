@@ -8,13 +8,13 @@
   <div id="links">
     <div class="wrapper_skinny">
       <ul>
-        <li>Episodes</li>
-        <li><a href="#">New Episode</a></li>
+        <li><%= link_to "Episodes", root_path %></li>
+        <li><%= link_to "New Episode", new_user_episode_path(@user) %></li>
         <li><%= link_to "Account Settings", edit_user_registration_path, class: "current" %></li>
-        <li><a href="#">View Podcast</a></li>
+        <li><%= link_to "View User", user_path(current_user)%></li>
       </ul>
     </div>
-</div>
+  </div>
 
 
 <div id="form">
