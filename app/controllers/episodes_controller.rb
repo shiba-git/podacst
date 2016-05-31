@@ -1,6 +1,6 @@
 class EpisodesController < ApplicationController
 	before_action :find_user
-	before_action :find_episode, only: [:show]
+	before_action :find_episode, only: [:show, :edit, :update, :destroy]
 
 
 	def new
@@ -18,6 +18,22 @@ class EpisodesController < ApplicationController
 
 	def show
 		@episodes = Episode.where(user_id: @user).order("created_at DESC").reject { |e| e.id == @episode.id }
+	end
+
+	def edit
+	end
+
+	def update
+		if @episode.update params_episode
+			redirect_to user_episode_path(@user, @episode), notice: "Episode was succesfully updated!"
+		else
+			render 'edit'
+		end
+	end
+
+	def destroy
+		@episode.destroy
+		redirect_to root_path
 	end
 
 

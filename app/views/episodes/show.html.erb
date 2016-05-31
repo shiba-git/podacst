@@ -1,11 +1,19 @@
 <div id="podcast_show">
 		<div id="show_banner">
 			<div class="wrapper_skinny">
-				<h1>The Rocketship Podcast</h1>
-				<p class="description">Business Explored. The podcast that inspires tens of thousands of entrepreneurs each week. Join us as we dive into everything from funding to growth, culture to sales and everything in between. New interview every Sunday and a full episode every Wednesday.</p>
-				<a href="#" class="subscribe_link">iTunes</a>
-				<a href="#" class="subscribe_link">Stitcher</a>
-				<a href="#" class="subscribe_link">PodBay</a>
+				<h1><%= @user.title %></h1>
+				<p class="description"><%= @user.description %></p>
+				<% unless @user.itunes.blank? %>
+				<a href="<%= @user.itunes %>" class="subscribe_link">iTunes</a>
+				<% end %>
+
+				<% unless @user.stitcher.blank? %>
+				<a href="<%= @user.stitcher %>" class="subscribe_link">Stitcher</a>
+				<% end %>
+
+				<% unless @user.podbay.blank? %>
+				<a href="<%= @user.podbay %>" class="subscribe_link">PodBay</a>
+				<%end %>
 			</div>
 		</div>
 
