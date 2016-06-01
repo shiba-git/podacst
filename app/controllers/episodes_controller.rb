@@ -42,7 +42,7 @@ class EpisodesController < ApplicationController
 private
 
 	def params_episode
-		params.require(:episode).permit(:title, :description)
+		params.require(:episode).permit(:title, :description, :episode_thumbnail)
 	end
 
 	def find_user
