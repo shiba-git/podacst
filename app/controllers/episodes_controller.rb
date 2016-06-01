@@ -1,4 +1,6 @@
 class EpisodesController < ApplicationController
+	before_action :authenticate_user!, expect: [:show]
+	before_action :require_permission
 	before_action :find_user
 	before_action :find_episode, only: [:show, :edit, :update, :destroy]
 
@@ -49,6 +51,13 @@ private
 
 	def find_episode
 		@episode = Episode.find(params[:id])
+	end
+
+	def require_permission
+		@user = User.find(params[:user_id])
+		if current_user != @user
+			redirect_to root_path, notice: "Sorry, you'renot allowed to view that page"
+		end
 	end
 
 end
