@@ -4,7 +4,7 @@
 
 	<div id="podcasts" class = "cf">
 		<div class="wrapper">
-			<ul>
+			<ul class = "cf">
 				<% @users.each do |user|%>
 					<%= link_to user do %>
 					<li>
@@ -17,5 +17,7 @@
 					<% end %>
 				<% end %>
 			</ul>
+
+			<%= will_paginate @users, previous_label: "Previous", next_label: "Next" %>
 		</div>
 	</div>

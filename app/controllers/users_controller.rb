@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 	before_action :find_episode, only: [:show, :dashboard]
 	
 	def index 
-		@users = User.all.order("created_at DESC")
+		@users = User.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
 	end
 
 	def show
@@ -23,6 +23,6 @@ class UsersController < ApplicationController
 		end
 
 		def find_episode
-			@episodes = Episode.where(user_id: @user).order("created_at DESC")
+			@episodes = Episode.where(user_id: @user).order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
 		end
 end
