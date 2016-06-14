@@ -22,6 +22,18 @@ body{
 	margin: 0 auto;
 }
 
+#notice_wrapper{
+	width: 100%;
+	position: absolute;
+	background: rgba(208,103,82,0.85);
+	z-index: 999;
+	p {
+		color: $white;
+		text-align: center;
+		font-weight: 700;
+	}
+}
+
 .cf:before, .cf:after{
 	content: "  ";
 	display: table;
